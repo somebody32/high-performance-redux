@@ -1,0 +1,33 @@
+function itemsReducer(state = initial_state, action) {
+  switch (action.type) {
+  case 'MARK':
+    return state.map((item) =>
+      action.id === item.id ?
+        {...item, marked: !item.marked } :
+        item
+    );
+  default:
+    return state;
+  }
+}
+
+class App extends Component {
+  render() {
+    const { items, markItem } = this.props;
+    return (
+      <div>
+        {items.map(item =>
+          <Item key={item.id} id={item.id} marked={item.marked} onClick={markItem} />
+        )}
+      </div>
+    );
+  }
+};
+
+function mapStateToProps(state) {
+  return state;
+}
+
+const markItem = (id) => ({type: 'MARK', id});
+
+export default connect(mapStateToProps, {markItem})(App);

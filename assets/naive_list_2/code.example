@@ -1,0 +1,58 @@
+function itemsReducer(state = {}, action) {
+  return {
+    ids: ids(state.ids, action),
+    items: items(state.items, action),
+  }
+}
+
+const store = createStore(itemsReducer);
+
+function ids(state = [], action) {
+  return state;
+}
+
+function items(state = {}, action) {
+  switch (action.type) {
+  case 'MARK':
+    const item = state[action.id];
+    return {
+      ...state,
+      [action.id]: {...item, marked: !item.marked}
+    };
+  default:
+    return state;
+  }
+}
+
+class App extends Component {
+  render() {
+    const { ids } = this.props;
+    return (
+      <div>
+        {
+          ids.map(id => {
+            return <Item key={id} id={id} />;
+          })
+        }
+      </div>
+    );
+  }
+};
+
+function mapStateToProps(state) {
+  return {ids: state.ids};
+}
+
+function mapStateToProps(state, props) {
+  const { id } = props;
+  const { items } = state;
+  return {
+    item: items[id],
+  };
+}
+
+const markItem = (id) => ({type: 'MARK', id});
+export default connect(
+  mapStateToProps,
+  {markItem}
+)(Item);

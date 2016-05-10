@@ -1,0 +1,17 @@
+function mapStateToProps(_, initialProps) {
+  const { id } = initialProps;
+  return (state) => {
+    const { items } = state;
+    return {
+      item: items[id],
+    };
+  }
+}
+
+
+
+
+
+
+
+ 

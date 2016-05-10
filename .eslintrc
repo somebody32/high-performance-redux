@@ -1,0 +1,11 @@
+---
+"extends":
+  - "eslint-config-defaults/configurations/walmart/es6-react"
+
+"rules":
+  "jsx-indent": [2, 2]
+  "max-len": 0
+
+"env":
+  "browser": true,
+  "node": true
