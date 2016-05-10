@@ -19,11 +19,6 @@ module.exports = {
       "process.env": {
         "NODE_ENV": JSON.stringify("development") // or react perf will not work
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
     })
   ],
   module: {
