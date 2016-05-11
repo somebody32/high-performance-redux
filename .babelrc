@@ -8,8 +8,19 @@
           "transforms": [{
             "transform": "react-transform-render-visualizer/lib/specify"
             }]
-            }]
-          ]
+          }
+        ]
+      ]
     },
+    "production": {
+      "plugins": [
+        ["react-transform", {
+          "transforms": [{
+            "transform": "react-transform-render-visualizer/lib/specify"
+            }]
+          }
+        ]
+      ]
+    }
   },
 }
