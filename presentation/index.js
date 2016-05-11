@@ -288,7 +288,7 @@ export default class Presentation extends React.Component {
               { loc: [0, 0], title: "Naïve code" },
               { loc: [0, 12], note: "Classic reducer" },
               { loc: [13, 25], note: "Plain container" },
-              { loc: [26, 33], note: "Super simple" }
+              { loc: [26, 36], note: "Super simple" }
             ]}
           />
 
@@ -343,6 +343,18 @@ export default class Presentation extends React.Component {
             ranges={[
               { loc: [0, 0], title: "Fabric functions!" },
               { loc: [0, 9], note: "Function that returns functions" },
+            ]}
+          />
+
+          <CodeSlide
+            maxWidth={1300}
+            textSize={"1.8rem"}
+            transition={[]}
+            lang="js"
+            code={require("raw!../assets/connect2.example")}
+            ranges={[
+              { loc: [0, 0], title: "Back to react-redux" },
+              { loc: [254, 263], note: "Short-circuiting the check. React will not even try to update" },
             ]}
           />
 

@@ -30,4 +30,11 @@ function mapStateToProps(state) {
 
 const markItem = (id) => ({type: 'MARK', id});
 
-export default connect(mapStateToProps, {markItem})(App);
+export default connect(
+  mapStateToProps,
+  {markItem}
+)(App);
+
+
+
+ 

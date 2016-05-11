@@ -56,3 +56,6 @@ export default connect(
   mapStateToProps,
   {markItem}
 )(Item);
+
+
+ 
