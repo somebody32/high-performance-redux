@@ -271,7 +271,7 @@ export default class Presentation extends React.Component {
               Naïve 10k list
             </Heading>
             <Text margin="4px 0px 20px" bold textColor="tertiary">
-              Start measurements, click rows, stop measurements, scream 😱.
+              Start measurements, click rows, open browser console, stop measurements, scream 😱.
             </Text>
             <button style={{margin: "0px 10px 20px", color: "#3498DB"}} onClick={perfStart}>Start Perf Measurement</button>
             <button style={{margin: "0px 10px 20px", color: "#3498DB"}} onClick={perfStop}>Stop Perf Measurement</button>
@@ -354,6 +354,7 @@ export default class Presentation extends React.Component {
             code={require("raw!../assets/connect2.example")}
             ranges={[
               { loc: [0, 0], title: "Back to react-redux" },
+              { loc: [243, 244], note: "Our familiar handleChange" },
               { loc: [254, 263], note: "Short-circuiting the check. React will not even try to update" },
             ]}
           />
